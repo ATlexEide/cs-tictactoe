@@ -12,3 +12,4 @@
 /Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.pdb
 /Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.genruntimeconfig.cache
 /Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/ref/cs-tictactoe.dll
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.sourcelink.json
