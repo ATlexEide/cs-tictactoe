@@ -1,0 +1,14 @@
+/Users/alex/kodehode/backend/cs-tictactoe/bin/Debug/net8.0/cs-tictactoe
+/Users/alex/kodehode/backend/cs-tictactoe/bin/Debug/net8.0/cs-tictactoe.deps.json
+/Users/alex/kodehode/backend/cs-tictactoe/bin/Debug/net8.0/cs-tictactoe.runtimeconfig.json
+/Users/alex/kodehode/backend/cs-tictactoe/bin/Debug/net8.0/cs-tictactoe.dll
+/Users/alex/kodehode/backend/cs-tictactoe/bin/Debug/net8.0/cs-tictactoe.pdb
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.AssemblyInfoInputs.cache
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.AssemblyInfo.cs
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.csproj.CoreCompileInputs.cache
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.dll
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/refint/cs-tictactoe.dll
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.pdb
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/cs-tictactoe.genruntimeconfig.cache
+/Users/alex/kodehode/backend/cs-tictactoe/obj/Debug/net8.0/ref/cs-tictactoe.dll
