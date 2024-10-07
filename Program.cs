@@ -61,7 +61,6 @@ class Program
             Console.WriteLine($"'{gB.GetValue(3)}' '{gB.GetValue(4)}' '{gB.GetValue(5)}'");
             Console.WriteLine($"'{gB.GetValue(6)}' '{gB.GetValue(7)}' '{gB.GetValue(8)}'");
         }
-        ;
         ////////////////////////////
         /// Get computer play
         void getComputerPlay(Array gB, string computerMarker, string playerMarker)
@@ -86,9 +85,7 @@ class Program
             {
                 getComputerPlay(gB, computerMarker, playerMarker);
             }
-            ;
         }
-        ;
         ////////////////////////////
         /// Get player play
         void getPlayerPlay(Array gB, string playerMarker, string computerMarker)
@@ -118,9 +115,7 @@ class Program
                 Console.WriteLine("That spot is occupied, please try again");
                 getPlayerPlay(gB, playerMarker, computerMarker);
             }
-            ;
         }
-        ;
         ////////////////////////////
         /// Check for win conditions
         bool checkWinCond(Array gB, string currMarker)
@@ -172,7 +167,6 @@ class Program
                 Console.WriteLine($"{winner} wins");
                 isWin = true;
             }
-            ;
             /////// Check for {cross} win
             if (
                 (string?)gB.GetValue(0) == currMarker
@@ -188,24 +182,7 @@ class Program
                 Console.WriteLine($"{winner} wins");
                 isWin = true;
             }
-            ;
-
-            /////// Check for draw
-            // foreach (string tile in gB)
-            // {
-            //     if (tile == playerMarker || tile == computerMarker)
-            //     {
-            //         usedTiles++;
-            //     }
-            //     if (usedTiles == 9 && !isWin)
-            //     {
-            //         Console.WriteLine("It's a draw");
-            //         return true;
-            //     }
-            // }
-
             return isWin;
         }
-        ;
     }
 };
