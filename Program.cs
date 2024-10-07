@@ -16,7 +16,7 @@ class Program
         int usedTiles = 0;
         ////////////////////////////
         /// Get marker input from player
-        static string getPlayerMarker()
+        string getPlayerMarker()
         {
             string? playerMarker = Console.ReadLine()?.ToLower();
             if (playerMarker == "x" || playerMarker == "o")
@@ -55,7 +55,7 @@ class Program
         ;
         ////////////////////////////
         /// Print the current state of the gameboard
-        static void printGameBoard(Array gameBoard)
+        void printGameBoard(Array gameBoard)
         {
             Console.WriteLine(
                 $"'{gameBoard.GetValue(0)}' '{gameBoard.GetValue(1)}' '{gameBoard.GetValue(2)}'"
