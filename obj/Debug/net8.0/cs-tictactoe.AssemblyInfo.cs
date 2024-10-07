@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cs-tictactoe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b54d13b551d27b361e75e3d1036c89f1930891b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d317aee41a0614e38e488bde1bcf4d5e263f6b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("cs-tictactoe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cs-tictactoe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

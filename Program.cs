@@ -42,7 +42,7 @@ class Program
             Console.WriteLine("Press any key to start");
             Console.ReadKey();
             Console.Clear();
-            getPlayerPlay(gameBoard, playerMarker, computerMarker);
+            getPlayerPlay();
         }
         else
         {
@@ -50,75 +50,81 @@ class Program
             Console.WriteLine($"You chose {playerMarker}, computer plays {computerMarker}");
             Console.WriteLine("Press any key to start");
             Console.ReadKey();
-            getComputerPlay(gameBoard, computerMarker, playerMarker);
+            getComputerPlay();
         }
         ;
         ////////////////////////////
         /// Print the current state of the gameboard
-        static void printGameBoard(Array gB)
+        static void printGameBoard(Array gameBoard)
         {
-            Console.WriteLine($"'{gB.GetValue(0)}' '{gB.GetValue(1)}' '{gB.GetValue(2)}'");
-            Console.WriteLine($"'{gB.GetValue(3)}' '{gB.GetValue(4)}' '{gB.GetValue(5)}'");
-            Console.WriteLine($"'{gB.GetValue(6)}' '{gB.GetValue(7)}' '{gB.GetValue(8)}'");
+            Console.WriteLine(
+                $"'{gameBoard.GetValue(0)}' '{gameBoard.GetValue(1)}' '{gameBoard.GetValue(2)}'"
+            );
+            Console.WriteLine(
+                $"'{gameBoard.GetValue(3)}' '{gameBoard.GetValue(4)}' '{gameBoard.GetValue(5)}'"
+            );
+            Console.WriteLine(
+                $"'{gameBoard.GetValue(6)}' '{gameBoard.GetValue(7)}' '{gameBoard.GetValue(8)}'"
+            );
         }
         ////////////////////////////
         /// Get computer play
-        void getComputerPlay(Array gB, string computerMarker, string playerMarker)
+        void getComputerPlay()
         {
-            int placeIndex = new Random().Next(0, gB.Length);
+            int placeIndex = new Random().Next(0, gameBoard.Length);
 
             if (
-                (string?)gB.GetValue(placeIndex) != playerMarker
-                && (string?)gB.GetValue(placeIndex) != computerMarker
+                (string?)gameBoard.GetValue(placeIndex) != playerMarker
+                && (string?)gameBoard.GetValue(placeIndex) != computerMarker
             )
             {
-                gB.SetValue(computerMarker, placeIndex);
-                if (checkWinCond(gB, computerMarker))
+                gameBoard.SetValue(computerMarker, placeIndex);
+                if (checkWinCond(computerMarker))
                 {
                     return;
                 }
                 ;
                 usedTiles++;
-                getPlayerPlay(gB, playerMarker, computerMarker);
+                getPlayerPlay();
             }
             else
             {
-                getComputerPlay(gB, computerMarker, playerMarker);
+                getComputerPlay();
             }
         }
         ////////////////////////////
         /// Get player play
-        void getPlayerPlay(Array gB, string playerMarker, string computerMarker)
+        void getPlayerPlay()
         {
-            printGameBoard(gB);
+            printGameBoard(gameBoard);
             Console.WriteLine("Place your marker (1 - 9)");
             int placeIndex = Convert.ToInt32(Console.ReadLine()) - 1;
             if (
-                (string?)gB.GetValue(placeIndex) != playerMarker
-                && (string?)gB.GetValue(placeIndex) != computerMarker
+                (string?)gameBoard.GetValue(placeIndex) != playerMarker
+                && (string?)gameBoard.GetValue(placeIndex) != computerMarker
             )
             {
-                gB.SetValue(playerMarker, placeIndex);
+                gameBoard.SetValue(playerMarker, placeIndex);
                 Console.WriteLine($"You placed your marker at {placeIndex}");
-                if (checkWinCond(gB, playerMarker))
+                if (checkWinCond(playerMarker))
                 {
                     return;
                 }
                 ;
                 Console.Clear();
                 usedTiles++;
-                getComputerPlay(gB, computerMarker, playerMarker);
+                getComputerPlay();
             }
             else
             {
                 Console.Clear();
                 Console.WriteLine("That spot is occupied, please try again");
-                getPlayerPlay(gB, playerMarker, computerMarker);
+                getPlayerPlay();
             }
         }
         ////////////////////////////
         /// Check for win conditions
-        bool checkWinCond(Array gB, string currMarker)
+        bool checkWinCond(string currMarker)
         {
             string winner;
             if (currMarker == playerMarker)
@@ -132,53 +138,53 @@ class Program
             bool isWin = false;
             /////// Check for horizontal win
             if (
-                (string?)gB.GetValue(0) == currMarker
-                    && (string?)gB.GetValue(1) == currMarker
-                    && (string?)gB.GetValue(2) == currMarker
-                || (string?)gB.GetValue(3) == currMarker
-                    && (string?)gB.GetValue(4) == currMarker
-                    && (string?)gB.GetValue(5) == currMarker
-                || (string?)gB.GetValue(6) == currMarker
-                    && (string?)gB.GetValue(7) == currMarker
-                    && (string?)gB.GetValue(8) == currMarker
+                (string?)gameBoard.GetValue(0) == currMarker
+                    && (string?)gameBoard.GetValue(1) == currMarker
+                    && (string?)gameBoard.GetValue(2) == currMarker
+                || (string?)gameBoard.GetValue(3) == currMarker
+                    && (string?)gameBoard.GetValue(4) == currMarker
+                    && (string?)gameBoard.GetValue(5) == currMarker
+                || (string?)gameBoard.GetValue(6) == currMarker
+                    && (string?)gameBoard.GetValue(7) == currMarker
+                    && (string?)gameBoard.GetValue(8) == currMarker
             )
             {
                 Console.Clear();
-                printGameBoard(gB);
+                printGameBoard(gameBoard);
                 Console.WriteLine($"{winner} wins");
                 isWin = true;
             }
             ;
             /////// Check for vertical win
             if (
-                (string?)gB.GetValue(0) == currMarker
-                    && (string?)gB.GetValue(3) == currMarker
-                    && (string?)gB.GetValue(6) == currMarker
-                || (string?)gB.GetValue(1) == currMarker
-                    && (string?)gB.GetValue(4) == currMarker
-                    && (string?)gB.GetValue(7) == currMarker
-                || (string?)gB.GetValue(2) == currMarker
-                    && (string?)gB.GetValue(5) == currMarker
-                    && (string?)gB.GetValue(8) == currMarker
+                (string?)gameBoard.GetValue(0) == currMarker
+                    && (string?)gameBoard.GetValue(3) == currMarker
+                    && (string?)gameBoard.GetValue(6) == currMarker
+                || (string?)gameBoard.GetValue(1) == currMarker
+                    && (string?)gameBoard.GetValue(4) == currMarker
+                    && (string?)gameBoard.GetValue(7) == currMarker
+                || (string?)gameBoard.GetValue(2) == currMarker
+                    && (string?)gameBoard.GetValue(5) == currMarker
+                    && (string?)gameBoard.GetValue(8) == currMarker
             )
             {
                 Console.Clear();
-                printGameBoard(gB);
+                printGameBoard(gameBoard);
                 Console.WriteLine($"{winner} wins");
                 isWin = true;
             }
             /////// Check for {cross} win
             if (
-                (string?)gB.GetValue(0) == currMarker
-                    && (string?)gB.GetValue(4) == currMarker
-                    && (string?)gB.GetValue(8) == currMarker
-                || (string?)gB.GetValue(6) == currMarker
-                    && (string?)gB.GetValue(4) == currMarker
-                    && (string?)gB.GetValue(2) == currMarker
+                (string?)gameBoard.GetValue(0) == currMarker
+                    && (string?)gameBoard.GetValue(4) == currMarker
+                    && (string?)gameBoard.GetValue(8) == currMarker
+                || (string?)gameBoard.GetValue(6) == currMarker
+                    && (string?)gameBoard.GetValue(4) == currMarker
+                    && (string?)gameBoard.GetValue(2) == currMarker
             )
             {
                 Console.Clear();
-                printGameBoard(gB);
+                printGameBoard(gameBoard);
                 Console.WriteLine($"{winner} wins");
                 isWin = true;
             }
